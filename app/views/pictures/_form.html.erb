@@ -1,0 +1,6 @@
+<%= form_with model: picture, local: true do |form| %>
+<%=f.text_field :full_name, placeholder: "Nome completo"%><br>
+<%=f.text_field :password, placeholder: "senha"%><br>
+ <%= f.file_field :avatar, placeholder: "Avatar"%>
+<%= form.submit%>
+<%end%>
