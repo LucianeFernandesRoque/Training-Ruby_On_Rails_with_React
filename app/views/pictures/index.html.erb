@@ -1,10 +1,16 @@
-<%= form_with model: @picture, local: true do |form| %>
+<h1>Upload de imagens</h1>
 
-<%=form.text_field :full_name, placeholder: "Nome completo"%><br>
-<%=form.text_field :password, placeholder: "senha"%><br>
+<% @pictures.each do |picture| %>
+  <% if picture %>
+    <h1><%= picture.full_name %></h1>
+    <h1><%= picture.password %></h1>
+    <h1><%= picture.avatar %></h1>
 
- <%= form.file_field :avatar, placeholder: "Avatar"%>
-<%= form.submit%>
+
+  <%end%>
 <%end%>
+<%= link_to "pictures", new_picture_path%>
+<%= link_to "Voltar", @picture_path%>
+
 
 
